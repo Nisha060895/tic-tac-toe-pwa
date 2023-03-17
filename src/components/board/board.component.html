@@ -1,0 +1,28 @@
+<div class="game-container">
+    <div class="content">
+        <div class="header">
+            <h1>Tic Tac Toe</h1>
+            <button class="restart-btn" *ngIf="totalMoves < 9" (click)="newGame()">Restart</button>
+        </div>
+        <div class="winner-style">
+            <ng-container *ngIf="winner">
+                {{winner ? 'Game is over. Winner is ' : ''}}{{winner ? winner : ''}}
+            </ng-container>
+            <ng-container *ngIf="(totalMoves == 9)">
+                Game has not started yet.
+            </ng-container>
+            <ng-container *ngIf="(totalMoves < 9 && !winner)">
+                Game has not completed yet.
+            </ng-container>
+            <ng-container *ngIf="(totalMoves == 0 && !winner)">
+                It's tie!! Start again!
+            </ng-container>
+        </div>
+        <div class="board-wrapper">
+            <div *ngFor="let squ of squares;let ind = index" (click)="makeMove(ind)" class="square-wrapper"
+                [class]="squ">
+                <app-square [value]="squ"></app-square>
+            </div>
+        </div>
+    </div>
+</div>
