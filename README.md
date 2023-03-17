@@ -25,3 +25,19 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+----Extras----
+
+Install PWA
+ng add @angular/pwa -> it will create all necessary files
+
+Create Prod bundle
+ng build --prod
+
+Install HTTP-Server -> to host our application
+npm install angular-http-server
+
+Run command 
+http-server -p 8080 -c-1 dist/tic-tac-toe
+
+Open browser and Open localhost:8080 -> app is hosted now
